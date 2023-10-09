@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.quizz.models import Question, Processed_Answers
+from apps.quizz.models import Question, Processed_Answers, Attempts
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
 from import_export import fields
@@ -18,8 +18,13 @@ class QuestionAdmin(ImportExportModelAdmin):
 
 
 class ProcessedAnswersAdmin(admin.ModelAdmin):
-    list_display = ['id_question', 'answer_question', 'user']
+    list_display = ['id', 'answer_question', 'user', 'user_answer', 'end_time']
+
+
+class AttemptsAmin(admin.ModelAdmin):
+    list_display = ['id', 'user', 'processed_answers', 'score', 'step']
 
 
 admin.site.register(Question, QuestionAdmin),
 admin.site.register(Processed_Answers, ProcessedAnswersAdmin)
+admin.site.register(Attempts, AttemptsAmin)

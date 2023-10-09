@@ -103,9 +103,9 @@ LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'Asia/Tashkent'
 
-USE_I18N = True
+USE_I18N = False
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
